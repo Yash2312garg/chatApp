@@ -17,30 +17,23 @@ function Chat() {
     ConnectToWS()
   }, []); // Empty dependency array ensures this only runs once when the component mounts
 
-
   useEffect(() => {
     axios.get('./people').then(res => {
       const tempOnlinePeople = onLinePeople.map((p) => p.userId)
-      console.log(onLinePeople)
-      console.log(id)
-
-      const offline = res.data?.filter(p => !(p._id === id || tempOnlinePeople.includes(p._id)))
-      console.log(offline)
+      const offline = res.data?.filter(p => !(p.username === userName || tempOnlinePeople.includes(p._id)))
       setOfflinePeople(offline)
     })
   }, [onLinePeople])
 
 
   function ShowOnlinePeople(peopleArray) {
-    console.log(peopleArray);
     const peopleSet = new Set(peopleArray);
     let peopleArr = [...peopleSet]
     peopleArr = peopleArr.filter((people) => (people?.username != userName))
     setOnlinePeople(peopleArr)
-    // if (peopleArr.length > 0) {
-    //   setSelectedContact(peopleArr[0])
-    // }
   }
+
+
   function ConnectToWS() {
     // Initialize WebSocket connection
     const ws = new WebSocket("ws://localhost:4000")
@@ -57,6 +50,7 @@ function Chat() {
     const messageData = JSON.parse(e.data);
     if ("online" in messageData) {
       ShowOnlinePeople(messageData.online);
+
     } else if ("text" in messageData) {
       setMessages((prev) => ([...prev, { ...messageData }]))
     }
@@ -73,8 +67,7 @@ function Chat() {
   //   ws.removeEventListener("close", handleDisconnect);
   //   ws.close();  // Close the WebSocket connection when the component unmounts
   // };
-  
-  console.log(selectedContact)
+
   return (
     <div className='flex flex-row justify-start items-start bg-[#A1D6B2]'>
       <SideNav />

@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Homepage from "./Pages/Homepage";
 import Profile from "./Pages/Profile";
 import Signup from "./Authentication/Signup";
+import Profile2 from "./Pages/Profile2";
 function App() {
   axios.defaults.baseURL = "http://localhost:4000/"
   axios.defaults.withCredentials = true;
@@ -17,6 +18,8 @@ function App() {
           <Route path="/login" element={<Signup />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/chats" element={<ChatsPage />} />
+          <Route path="/profile2" element={<Profile2 />} />
+
           {/* <Route path="*" element={<NotFoundPage />} /> */}
         </Routes>
       </BrowserRouter>

@@ -12,7 +12,7 @@ export function UserContextProvider({ children }) {
             withCredentials: true, // Allow cookies to be sent with the request
           }).then(response=>{
             console.log(response)
-            setId(response.data.userId)
+            setId(response.data._id)
             setUserName(response.data.username)
         })
     }, [userName])

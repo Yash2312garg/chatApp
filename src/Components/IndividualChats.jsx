@@ -60,7 +60,7 @@ function IndividualChats(props) {
     }, [props.messages]);
 
     const messagesWithoutDupes = uniqBy(props.messages, "_id");
-
+    console.log(messagesWithoutDupes)
     return (
         <div className="flex flex-col w-full h-[100vh] bg-gray-900">
             {/* Top bar with username and profile picture */}

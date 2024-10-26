@@ -1,6 +1,7 @@
 import React from 'react';
 import { CiChat1, CiUser, CiLogout } from "react-icons/ci";
 import { useNavigate } from 'react-router-dom'; // Importing useNavigate
+import LogoutButton from '../Authentication/Logout';
 
 function SideNav() {
     const navigate = useNavigate();
@@ -21,10 +22,7 @@ function SideNav() {
                     <span>Profile</span>
                 </button>
             </div>
-            <button className='flex flex-col justify-center items-center text-white text-sm font-medium hover:bg-gray-700 p-2 rounded transition duration-300 ease-in-out'>
-                <CiLogout className='text-2xl' />
-                <span>Logout</span>
-            </button>
+            <LogoutButton />
         </div>
     );
 }
