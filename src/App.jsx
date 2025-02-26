@@ -11,7 +11,7 @@ function App() {
   axios.defaults.withCredentials = true;
   return (
     <UserContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename = "https://digitalchat.vercel.app/">
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/signup" element={<Signup />} />
