@@ -20,7 +20,7 @@ const ContactForm = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:4000/contactus', {
+            const response = await axios.post('chatappbackend-zeta.vercel.app/contactus', {
                 name,
                 email,
                 message,

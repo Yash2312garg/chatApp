@@ -21,7 +21,7 @@ function Signup() {
     console.log(location)
     async function register(ev) {
         ev.preventDefault();
-        const url = location?.pathname.includes("login") ? "http://localhost:4000/login" : "http://localhost:4000/register";
+        const url = location?.pathname.includes("login") ? "chatappbackend-zeta.vercel.app/login" : "chatappbackend-zeta.vercel.appregister";
         const response = await Register(username.trim(), password.trim(), url)
         setUserName(username.trim())
         console.log(response)
