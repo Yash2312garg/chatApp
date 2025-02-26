@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import SideNav from '../Components/sideNav';
+import SideNav from '../Components/SideNav';
 import Contacts from '../Components/Contacts';
 import { UserContext } from '../Context/UserContext';
 import IndividualChats from '../Components/IndividualChats';
