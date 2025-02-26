@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../Context/UserContext';
 import axios from 'axios';
-import SideNav from '../Components/sideNav';
+import SideNav from '../Components/SideNav';
 import { FiEdit2, FiSave, FiCamera, FiUpload, FiArrowRight } from 'react-icons/fi'; // Import icons
 import { useWebcamCapture } from '../Hooks/usePhotGallery';
 import Webcam from 'react-webcam'; // Import react-webcam
+
 
 const Profile = () => {
   const { userName, id } = useContext(UserContext);
@@ -24,6 +25,7 @@ const Profile = () => {
         console.error('Error fetching user data:', error);
       }
     };
+    //done with this
     fetchUserData();
   }, []);
 
