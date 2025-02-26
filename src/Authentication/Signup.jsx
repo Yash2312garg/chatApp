@@ -44,10 +44,6 @@ function Signup() {
 
     return (
         <div className='bg-gray-100 w-screen h-screen flex justify-center items-center relative '>
-            {/* <div className="floating-circle" style={{ width: '200px', height: '200px', backgroundColor: 'rgba(72, 187, 120, 0.5)', top: '10%', left: '15%' }}></div>
-            <div className="floating-circle-slow" style={{ width: '150px', height: '150px', backgroundColor: 'rgba(66, 153, 225, 0.5)', bottom: '13%', right: '2%' }}></div>
-            <div className="floating-circle-slow" style={{ width: '300px', height: '300px', backgroundColor: 'rgba(136, 84, 208, 0.5)', top: '35%', left: '6%', transform: 'translateX(-50%)' }}></div> */}
-
             <div className='bg-white w-[90vw] md:w-[70vw] lg:w-[60vw] h-[90vh] md:h-[80vh] rounded-lg shadow-lg flex flex-col md:flex-row p-4 md:p-8'>
 
                 {/* Left Side (Welcome Section) - Hidden on small screens */}
@@ -110,6 +106,9 @@ function Signup() {
                                 </button>
                             </div>
                         </div>
+                        {location?.pathname.includes("login") && <div className='flex-col flex gap-2 flex-end w-full'>
+                            <button className='text-green-600 text-sm'>Reset Password ?</button>
+                        </div>}
 
                         {/* Button */}
                         <button

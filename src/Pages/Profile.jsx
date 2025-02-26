@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../Context/UserContext';
 import axios from 'axios';
 import SideNav from '../Components/sideNav';
-import { FiEdit2, FiSave, FiCamera, FiUpload } from 'react-icons/fi'; // Import icons
+import { FiEdit2, FiSave, FiCamera, FiUpload, FiArrowRight } from 'react-icons/fi'; // Import icons
 import { useWebcamCapture } from '../Hooks/usePhotGallery';
 import Webcam from 'react-webcam'; // Import react-webcam
 
@@ -35,6 +35,7 @@ const Profile = () => {
   // Handle file upload changes
   const handleFileChange = (e) => {
     const file = e.target.files[0];
+    console.log(file)
     if (file) {
       setFormData({ ...formData, profilePicture: file });
     }
@@ -51,7 +52,7 @@ const Profile = () => {
 
     const formDataToSend = new FormData();
     formDataToSend.append('userId', id);
-
+    formDataToSend.append('purpose', 'profilepicture')
     if (capturedImg) {
       formDataToSend.append('file', capturedImg);
     } else {
@@ -77,10 +78,23 @@ const Profile = () => {
   };
 
   // Save field
-  const handleSave = async (field) => {
-    setEditingField('');
-    // Call backend to save the field if needed
-    console.log(`Saved ${field}:`, formData[field]);
+  const handleSave = async (field, value,setFormData,formData) => {
+    console.log(value)
+    try {
+      const response = await axios.post('http://localhost:4000/profile/status', {
+        field: field,
+        value: value
+      }, { withCredentials: true, })
+      if (response.status === 200) {
+        setFormData({ ...formData, field: value })
+      }
+      else {
+        window.alert("some error occured")
+      }
+    } catch (e) {
+      console.log("error changing status")
+
+    }
   };
 
   if (!user) return <div className="text-center text-gray-600">No user information available.</div>;
@@ -108,25 +122,13 @@ const Profile = () => {
           />
 
           {/* Read-only fields: Username, Email, Mobile Number */}
-          <ProfileField label="Username" value={user.username} />
-          <ProfileField label="Email" value={user.email} />
-          <ProfileField label="Mobile Number" value={user.mobileNumber} />
+          <ProfileField label="Username" value={user.username} editing_can_be_done={false}setFormData= {setFormData} formData = {formData} handleSave={handleSave} />
+          <ProfileField label="Email" value={user.email} editing_can_be_done={false} setFormData= {setFormData} formData = {formData} handleSave={handleSave} />
+          <ProfileField label="Mobile Number" value={user.mobileNumber} editing_can_be_done={false} setFormData= {setFormData} formData = {formData} handleSave={handleSave} />
+          {<ProfileField label="Status" value={user.Status} editing_can_be_done={true} setFormData= {setFormData} formData = {formData} handleSave={handleSave} />}
+          {/* <ProfileField label="Password" value={user.Pass} /> */}
 
-          {/* Editable Status */}
-          <EditableField
-            label="Status"
-            value={formData.status}
-            field="status"
-            editingField={editingField}
-            onEdit={handleEditClick}
-            onChange={handleChange}
-            onSave={handleSave}
-          />
 
-          {/* Editable Password */}
-          <button>
-            Edit Password
-          </button>
         </div>
       </div>
     </div>
@@ -186,11 +188,43 @@ const ProfilePicture = ({
 );
 
 // Reusable Profile Field Component
-const ProfileField = ({ label, value }) => (
-  <div className="text-gray-200 text-xs mb-2">
-    <p className="font-medium">{label}: {value}</p>
-  </div>
-);
+const ProfileField = ({ label, value, editing_can_be_done, handleSave,setFormData, formData }) => {
+  const [isEditOpen, setEditOpen] = useState(false)
+  const [editedValue, setEditedValue] = useState(value)
+  const handleChange = (e) => {
+    setEditedValue(e.target.value);
+  };
+
+  const handleSaveChanges = async () => {
+    await handleSave(label, editedValue,setFormData, formData)
+
+    setEditOpen(false)
+  }
+
+
+
+  return (
+    <div className="text-gray-200 mb-2 flex flex-row justify-between">
+      <div className='flex flex-col justify-between gap-[4px]'>
+        <span className='text-gray-400 text-xs' >
+          {label}
+        </span>
+        {isEditOpen ? <input
+          className="w-full px-3 py-1 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-[1.5px] focus:ring-[#4ade80] focus:border-[#4ade80] transition-all"
+          value={editedValue}
+          onChange={handleChange} /> : <p className="text-base break-words whitespace-normal">
+          {editedValue}
+        </p>}
+      </div>
+      {editing_can_be_done ? isEditOpen ? <button onClick={handleSaveChanges }>
+        {<FiArrowRight className='text-xl   ' />}
+      </button> : <button onClick={() => setEditOpen(true)}>
+        {<FiEdit2 className='text-xs' />}
+      </button> : ""}
+    </div>
+  )
+
+};
 
 // Editable Field Component
 const EditableField = ({ label, value, field, editingField, onEdit, onChange, onSave, type = 'text' }) => (

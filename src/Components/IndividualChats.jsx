@@ -10,14 +10,14 @@ function IndividualChats(props) {
     const messagesEndRef = useRef(null); // Reference for scrolling
     function sendMessage(e) {
         const recipientId = props.selectedContact?.userId || props.selectedContact?._id;
-    
+
         if (recipientId) {
             // Send message over WebSocket
             props.ws.send(JSON.stringify({
                 recipient: recipientId,
                 text: newMessageText
             }));
-    
+
             // Update the message state
             props.setMessages(prev => ([...prev, {
                 text: newMessageText,
@@ -25,14 +25,14 @@ function IndividualChats(props) {
                 recipient: recipientId, // Recipient ID (userId or _id)
                 id: Date.now() // Unique ID for the message
             }]));
-    
+
             // Clear the input after sending
             setMessageText("");
         } else {
             console.log("No recipient selected.");
         }
     }
-    
+
 
     useEffect(() => {
         console.log("hello")
@@ -88,31 +88,45 @@ function IndividualChats(props) {
                 {props.selectedContact === null ? (
                     <NoUserSelected />
                 ) : (
-                    messagesWithoutDupes.map((message) => {
+                    messagesWithoutDupes.map((message, index) => {
+                        const messageDate = new Date(message.updatedAt).toLocaleDateString();
+                        const previousMessageDate = index > 0
+                            ? new Date(messagesWithoutDupes[index - 1].updatedAt).toLocaleDateString()
+                            : null;
+
+                        const isNewDate = messageDate !== previousMessageDate;
+                        console.log(messageDate)
                         return (
-                            <div
-                                key={message.id}
-                                className={
-                                    "p-2 rounded-lg max-w-[60%] " +
-                                    (message.sender === props.id
-                                        ? "bg-green-600 text-gray-100 self-end"
-                                        : "bg-gray-800 text-gray-300 self-start")
-                                }
-                            >
-                                <div className="text-sm">{message.text}</div>
-                                <div className="text-xs text-gray-500 mt-1">
-                                    {new Date(message.timestamp).toLocaleTimeString([], {
-                                        hour: '2-digit',
-                                        minute: '2-digit',
-                                    })}
+                            <React.Fragment key={message.id}>
+                                {isNewDate && (
+                                    <div className="text-center text-xs text-gray-500 mt-2 mb-2 ">
+                                        {messageDate}
+                                    </div>
+                                )}
+                                <div
+                                    className={
+                                        "p-2 rounded-lg max-w-[60%] " +
+                                        (message.sender === props.id
+                                            ? "bg-green-600 text-gray-100 self-end"
+                                            : "bg-gray-800 text-gray-300 self-start")
+                                    }
+                                >
+                                    <div className="text-sm">{message.text}</div>
+                                    <div className="text-xs text-gray-500 mt-1">
+                                        {new Date(message.updatedAt).toLocaleTimeString([], {
+                                            hour: '2-digit',
+                                            minute: '2-digit',
+                                        })}
+                                    </div>
                                 </div>
-                            </div>
+                            </React.Fragment>
                         );
                     })
                 )}
                 {/* This div serves as a marker for scrolling */}
                 <div ref={messagesEndRef} />
             </div>
+
 
             {/* Bottom Input Section */}
             <div className="flex items-center p-3 bg-gray-800">
