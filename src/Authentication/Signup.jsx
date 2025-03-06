@@ -21,7 +21,9 @@ function Signup() {
     console.log(location)
     async function register(ev) {
         ev.preventDefault();
-        const url = location?.pathname.includes("login") ? "https://digitalchat.vercel.app/login" : "https://digitalchat.vercel.app/register";
+        const apiUrl = import.meta.env.VITE_API_URL;
+
+        const url = location?.pathname.includes("login") ? apiUrl +"/login" : apiUrl+"/register";
         const response = await Register(username.trim(), password.trim(), url)
         setUserName(username.trim())
         console.log(response)

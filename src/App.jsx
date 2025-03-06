@@ -7,7 +7,8 @@ import Profile from "./Pages/Profile";
 import Signup from "./Authentication/Signup";
 import Profile2 from "./Pages/Profile2";
 function App() {
-  axios.defaults.baseURL = "chatappbackend-zeta.vercel.app/"
+  const apiUrl = import.meta.env.VITE_API_URL;
+  axios.defaults.baseURL = apiUrl
   axios.defaults.withCredentials = true;
   return (
     <UserContextProvider>

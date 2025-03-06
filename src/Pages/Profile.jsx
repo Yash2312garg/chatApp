@@ -62,7 +62,9 @@ const Profile = () => {
     }
 
     try {
-      const response = await axios.post('chatappbackend-zeta.vercel.app/uploadProfile', formDataToSend, {
+      const apiUrl = import.meta.env.VITE_API_URL;
+
+      const response = await axios.post(apiUrl +'/uploadProfile', formDataToSend, {
         headers: { 'Content-Type': 'multipart/form-data' },
         withCredentials: true,
       });
@@ -83,7 +85,8 @@ const Profile = () => {
   const handleSave = async (field, value,setFormData,formData) => {
     console.log(value)
     try {
-      const response = await axios.post('chatappbackend-zeta.vercel.app/profile/status', {
+      const apiUrl = import.meta.env.VITE_API_URL;
+      const response = await axios.post(apiUrl+'/profile/status', {
         field: field,
         value: value
       }, { withCredentials: true, })

@@ -20,7 +20,9 @@ const ContactForm = () => {
         }
 
         try {
-            const response = await axios.post('chatappbackend-zeta.vercel.app/contactus', {
+            const apiUrl = import.meta.env.VITE_API_URL;
+
+            const response = await axios.post(`${apiUrl}/contactus`, {
                 name,
                 email,
                 message,

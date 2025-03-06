@@ -36,7 +36,7 @@ function Chat() {
 
   function ConnectToWS() {
     // Initialize WebSocket connection
-    const ws = new WebSocket("ws://localhost:4000")
+    const ws = new WebSocket(import.meta.env.VITE_WS_URL)
     setWs(ws)
     ws.addEventListener("message", handleMessage)
     ws.addEventListener("close", () =>
