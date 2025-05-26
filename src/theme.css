@@ -1,0 +1,453 @@
+/* ============================
+   THEME-BASED COLOR SYSTEM
+   ============================ */
+
+/* Light Theme (Default) */
+:root {
+    /* Brand Colors */
+/* Brand Colors - Extended Palette */
+--color-brand-primary: #274C77;         /* Deep Blue */
+--color-brand-primary-light: #315D8F;   /* Lighter Deep Blue */
+--color-brand-primary-dark: #1D3A5C;    /* Darker Deep Blue */
+--color-brand-secondary: #3E7CB1;       /* Azure Blue */
+--color-brand-secondary-light: #5090C8; /* Lighter Azure Blue */
+--color-brand-secondary-dark: #346A98;  /* Darker Azure Blue */
+--color-brand-tertiary: #81B0D5;        /* Sky Blue */
+--color-brand-tertiary-light: #9CC4E2;  /* Lighter Sky Blue */
+--color-brand-tertiary-dark: #6A9BC1;   /* Darker Sky Blue */
+--color-brand-neutral: #E7ECEF;         /* Alice Blue */
+--color-brand-neutral-light: #F3F6F9;   /* Lighter Alice Blue */
+--color-brand-neutral-dark: #D5DEE5;    /* Darker Alice Blue */
+--color-brand-accent: #6BC4A6;          /* Soft Teal - New accent color */
+--color-brand-accent-light: #8AD2BA;    /* Lighter Teal */
+--color-brand-accent-dark: #55AD8E;     /* Darker Teal */
+
+/* Background Variants - Enhanced */
+--color-bg-app: #F7F9FC;                /* Snow White */
+--color-bg-app-alt: #EFF3F9;            /* Cooler Snow White */
+--color-bg-header: #1E3A5F;             /* Deep Blue */
+--color-bg-header-active: #274C77;      /* Slightly lighter header for active states */
+--color-bg-sidebar: #2C3E50;            /* Charcoal */
+--color-bg-sidebar-active: #3A4F66;     /* Lighter sidebar item for active states */
+--color-bg-sidebar-hover: #374F68;      /* Hover state for sidebar */
+--color-bg-content: #FFFFFF;            /* Pure White */
+--color-bg-content-alt: #FBFCFD;        /* Very Subtle Off-white */
+--color-bg-card: #ECEEF1;               /* Whisper Grey */
+--color-bg-card-hover: #E4E8ED;         /* Slightly darker card on hover */
+--color-bg-card-active: #DFE4EA;        /* Active card state */
+--color-bg-tooltip: #485563;            /* Dark tooltip background */
+--color-bg-dropdown: #FFFFFF;           /* Dropdown background */
+--color-bg-dropdown-hover: #F7F9FC;     /* Dropdown item hover */
+--color-bg-modal-overlay: #2C3E50BF;    /* Charcoal 75% opacity */
+--color-bg-selected: #81B0D526;         /* Sky Blue 15% opacity */
+--color-bg-selected-strong: #81B0D540;  /* Sky Blue 25% opacity */
+--color-bg-alt-row: #F7F9FC;            /* Snow White */
+--color-bg-highlight: #FFF8E1;          /* Soft Yellow Highlight */
+--color-bg-search-highlight: #FFEB3B26; /* Yellow highlight for search 15% opacity */
+
+/* Buttons / Highlights / Links - Refined */
+--color-btn-primary: #274C77;           /* Deep Blue (from brand primary) */
+--color-btn-primary-hover: #315D8F;     /* Lighter Deep Blue for better hover contrast */
+--color-btn-primary-active: #1D3A5C;    /* Darker Deep Blue for active state */
+--color-btn-primary-text: #FFFFFF;      /* Button text color */
+--color-btn-secondary: #3E7CB1;         /* Azure Blue (from brand secondary) */
+--color-btn-secondary-hover: #5090C8;   /* Lighter Azure for better hover visibility */
+--color-btn-secondary-active: #346A98;  /* Darker Azure Blue for active state */
+--color-btn-secondary-text: #FFFFFF;    /* Button text color */
+--color-btn-tertiary: #81B0D5;          /* Sky Blue (from brand tertiary) */
+--color-btn-tertiary-hover: #9CC4E2;    /* Lighter Sky Blue for better hover */
+--color-btn-tertiary-active: #6A9BC1;   /* Darker Sky Blue for active state */
+--color-btn-tertiary-text: #FFFFFF;     /* Button text color */
+--color-btn-neutral: #5D6D7E;           /* Slate Grey */
+--color-btn-neutral-hover: #6E7F90;     /* Lighter Slate Grey */
+--color-btn-neutral-active: #4D5D6E;    /* Darker Slate Grey */
+--color-btn-neutral-text: #FFFFFF;      /* Button text color */
+--color-btn-outline: transparent;       /* Transparent background */
+--color-btn-outline-hover: #F0F5FA;     /* Very light blue hover */
+--color-btn-outline-active: #E7ECEF;    /* Light press state */
+--color-btn-outline-text: #274C77;      /* Deep Blue text */
+--color-btn-outline-border: #274C77;    /* Deep Blue border */
+--color-btn-danger: #E25563;            /* Softer Red for danger buttons */
+--color-btn-danger-hover: #E86D79;      /* Lighter danger hover */
+--color-btn-danger-active: #D1404E;     /* Darker danger active */
+--color-btn-danger-text: #FFFFFF;       /* Button text color */
+--color-btn-success: #3CB179;           /* Softer Green for success buttons */
+--color-btn-success-hover: #4FBF89;     /* Lighter success hover */
+--color-btn-success-active: #309C67;    /* Darker success active */
+--color-btn-success-text: #FFFFFF;      /* Button text color */
+--color-btn-warning: #F0B13A;           /* Softer Amber for warning buttons */
+--color-btn-warning-hover: #F4BE5A;     /* Lighter warning hover */
+--color-btn-warning-active: #DFA029;    /* Darker warning active */
+--color-btn-warning-text: #2C3E50;      /* Dark text for warning buttons */
+--color-btn-disabled: #BEC3C9;          /* Iron Grey */
+--color-btn-disabled-text: #8D9DAD;     /* Disabled text color */
+--color-link: #3E7CB1;                  /* Azure Blue (matching brand secondary) */
+--color-link-hover: #5090C8;            /* Lighter Azure Blue for hover */
+--color-link-active: #346A98;           /* Darker Azure Blue for active/visited */
+--color-link-subtle: #5D6D7E;           /* Slate Grey for subtle links */
+--color-link-subtle-hover: #3E7CB1;     /* Azure Blue for subtle hover */
+--color-text-selection: #81B0D566;      /* Sky Blue 40% opacity */
+--color-focus-ring: #81B0D5;            /* Sky Blue */
+--color-focus-ring-light: #81B0D580;    /* Sky Blue 50% opacity */
+
+/* Message Bubbles - Enhanced for Chat Interface */
+--color-msg-user-bg: #3E7CB1;           /* Azure Blue */
+--color-msg-user-bg-gradient-start: #4485B8; /* Slightly lighter gradient start */
+--color-msg-user-bg-gradient-end: #3874A8;   /* Slightly darker gradient end */
+--color-msg-user-text: #FFFFFF;         /* Pure White */
+--color-msg-user-time: #E7ECEFCC;       /* Near-white with 80% opacity */
+--color-msg-user-link: #E7ECEF;         /* Link color within user messages */
+--color-msg-user-link-hover: #FFFFFF;   /* Link hover within user messages */
+--color-msg-receiver-bg: #ECEEF1;       /* Whisper Grey */
+--color-msg-receiver-bg-gradient-start: #F0F2F5; /* Slightly lighter gradient start */
+--color-msg-receiver-bg-gradient-end: #E6E9ED;   /* Slightly darker gradient end */
+--color-msg-receiver-text: #2C3E50;     /* Charcoal */
+--color-msg-receiver-time: #8D9DAD;     /* Cool Grey */
+--color-msg-receiver-link: #3E7CB1;     /* Link color within receiver messages */
+--color-msg-receiver-link-hover: #274C77; /* Link hover within receiver messages */
+--color-msg-system-bg: #81B0D526;       /* Sky Blue 15% opacity */
+--color-msg-system-text: #5D6D7E;       /* Slate Grey */
+--color-msg-system-link: #3E7CB1;       /* Link color within system messages */
+--color-msg-system-link-hover: #274C77; /* Link hover within system messages */
+--color-msg-selected: #81B0D540;        /* Sky Blue 25% opacity */
+--color-msg-reply-highlight: #F0B13A26; /* Amber highlight 15% opacity */
+--color-msg-mention-highlight: #6BC4A626; /* Teal highlight 15% opacity */
+
+/* Status Indicators & Notifications - Refined */
+--color-status-success: #3CB179;        /* Softer Green */
+--color-status-success-light: #EBFAF4;  /* Very light green background */
+--color-status-success-border: #3CB17933; /* Green with 20% opacity border */
+--color-status-error: #E25563;          /* Softer Red */
+--color-status-error-light: #FEEEF0;    /* Very light red background */
+--color-status-error-border: #E2556333; /* Red with 20% opacity border */
+--color-status-warning: #F0B13A;        /* Softer Amber */
+--color-status-warning-light: #FFF8E1;  /* Very light amber background */
+--color-status-warning-border: #F0B13A33; /* Amber with 20% opacity border */
+--color-status-info: #81B0D5;           /* Sky Blue */
+--color-status-info-light: #F0F7FC;     /* Very light blue background */
+--color-status-info-border: #81B0D533;  /* Sky Blue with 20% opacity border */
+--color-status-neutral: #8D9DAD;        /* Cool Grey */
+--color-status-neutral-light: #F5F7F9;  /* Very light grey background */
+--color-status-neutral-border: #8D9DAD33; /* Cool Grey with 20% opacity border */
+--color-status-online: #3CB179;         /* Softer Green */
+--color-status-away: #F0B13A;           /* Softer Amber */
+--color-status-busy: #E25563;           /* Softer Red */
+--color-status-offline: #8D9DAD;        /* Cool Grey */
+--color-notification-badge: #E25563;    /* Softer Red */
+--color-notification-badge-light: #EC7A85; /* Lighter notification for secondary alerts */
+--color-msg-new-indicator: #81B0D5;     /* Sky Blue */
+--color-receipt-read: #3E7CB1;          /* Azure Blue */
+--color-receipt-delivered: #8D9DAD;     /* Cool Grey */
+--color-receipt-sent: #BEC3C9;          /* Iron Grey */
+--color-typing-indicator: #81B0D5;      /* Sky Blue */
+
+/* Borders & Dividers - Extended */
+--color-border-primary: #5D6D7E;        /* Slate Grey */
+--color-border-secondary: #8D9DAD;      /* Cool Grey */
+--color-border-subtle: #BEC3C9;         /* Iron Grey */
+--color-border-extra-subtle: #D8DEE4;   /* Very subtle near-white border */
+--color-border-focus: #81B0D5;          /* Sky Blue */
+--color-border-error: #E25563;          /* Softer Red */
+--color-border-success: #3CB179;        /* Softer Green */
+--color-border-warning: #F0B13A;        /* Softer Amber */
+--color-border-info: #81B0D5;           /* Sky Blue */
+--color-divider-primary: #BEC3C9;       /* Iron Grey */
+--color-divider-subtle: #ECEEF1;        /* Whisper Grey */
+--color-divider-extra-subtle: #F0F2F5;  /* Very subtle divider */
+
+/* Shadows & Elevation - More detailed options */
+--shadow-xs: 0px 1px 2px rgba(44, 62, 80, 0.03);
+--shadow-sm: 0px 2px 4px rgba(44, 62, 80, 0.05);
+--shadow-md: 0px 4px 8px rgba(44, 62, 80, 0.1);
+--shadow-lg: 0px 6px 12px rgba(44, 62, 80, 0.15);
+--shadow-xl: 0px 8px 16px rgba(44, 62, 80, 0.2);
+--shadow-2xl: 0px 10px 24px rgba(44, 62, 80, 0.25);
+--shadow-inner: inset 0px 2px 4px rgba(44, 62, 80, 0.05);
+--shadow-nav-top: 0px 2px 4px rgba(44, 62, 80, 0.1);
+--shadow-nav-bottom: 0px -2px 4px rgba(44, 62, 80, 0.1);
+--shadow-focus: 0px 0px 0px 3px rgba(129, 176, 213, 0.4);
+--shadow-button: 0px 2px 2px rgba(44, 62, 80, 0.08);
+--shadow-dropdown: 0px 6px 12px rgba(44, 62, 80, 0.15);
+--shadow-card-hover: 0px 6px 14px rgba(44, 62, 80, 0.12);
+--shadow-modal: 0px 8px 20px rgba(44, 62, 80, 0.22);
+
+/* Placeholders & Muted Text - Expanded */
+--color-placeholder-primary: #8D9DAD;   /* Cool Grey */
+--color-placeholder-secondary: #BEC3C9; /* Iron Grey */
+--color-placeholder-tertiary: #D8DEE4;  /* Very Light Grey */
+--color-text-disabled: #BEC3C9;         /* Iron Grey */
+--color-text-muted: #8D9DAD;            /* Cool Grey */
+--color-text-muted-strong: #5D6D7E;     /* Slate Grey - slightly stronger */
+--color-text-watermark: #BEC3C980;      /* Iron Grey 50% opacity */
+--color-text-helper: #5D6D7E;           /* Slate Grey */
+--color-text-error: #E25563;            /* Softer Red */
+--color-text-success: #3CB179;          /* Softer Green */
+--color-text-warning: #D99A27;          /* Darker Amber for better contrast */
+--color-text-info: #3E7CB1;             /* Azure Blue */
+
+/* Headings & Typography - Refined */
+--color-heading-h1: #3C4858;            /* Charcoal */
+--color-heading-h2: #2C3E50;            /* Charcoal */
+--color-heading-h3: #1E3A5F;            /* Deep Blue */
+--color-heading-h4: #1E3A5F;            /* Deep Blue */
+--color-heading-h5: #3E7CB1;            /* Azure Blue */
+--color-heading-h6: #5D6D7E;            /* Slate Grey */
+--color-text-body: #2C3E50;             /* Charcoal */
+--color-text-body-light: #3C4858;       /* Lighter Charcoal */
+--color-text-secondary: #5D6D7E;        /* Slate Grey */
+--color-text-caption: #8D9DAD;          /* Cool Grey */
+--color-text-label: #5D6D7E;            /* Slate Grey */
+--color-text-highlight: #D99A27;        /* Darker Amber */
+--color-text-blockquote: #5D6D7E;       /* Slate Grey */
+--color-bg-blockquote: #F7F9FC;         /* Snow White */
+--color-border-blockquote: #81B0D5;     /* Sky Blue */
+--color-text-code: #1E3A5F;             /* Deep Blue */
+--color-bg-code: #ECEEF1;               /* Whisper Grey */
+--color-text-pre: #2C3E50;              /* Charcoal */
+--color-bg-pre: #F0F2F5;                /* Lighter code block background */
+--color-text-inverse: #FFFFFF;          /* Pure White */
+--color-link-visited: #6E48AA;          /* Soft Purple for visited links */
+
+/* Form Controls - New section */
+--color-input-bg: #FFFFFF;              /* Pure White */
+--color-input-bg-disabled: #F0F2F5;     /* Light Grey background for disabled */
+--color-input-border: #BEC3C9;          /* Iron Grey */
+--color-input-border-hover: #8D9DAD;    /* Cool Grey on hover */
+--color-input-border-focus: #81B0D5;    /* Sky Blue on focus */
+--color-input-placeholder: #8D9DAD;     /* Cool Grey */
+--color-input-text: #2C3E50;            /* Charcoal */
+--color-input-text-disabled: #8D9DAD;   /* Cool Grey */
+--color-label: #5D6D7E;                 /* Slate Grey */
+--color-label-required: #E25563;        /* Softer Red */
+--color-checkbox-bg: #FFFFFF;           /* Pure White */
+--color-checkbox-border: #BEC3C9;       /* Iron Grey */
+--color-checkbox-checked: #3E7CB1;      /* Azure Blue */
+--color-radio-bg: #FFFFFF;              /* Pure White */
+--color-radio-border: #BEC3C9;          /* Iron Grey */
+--color-radio-checked: #3E7CB1;         /* Azure Blue */
+--color-switch-bg: #BEC3C9;             /* Iron Grey */
+--color-switch-bg-checked: #3E7CB1;     /* Azure Blue */
+--color-switch-handle: #FFFFFF;         /* Pure White */
+--color-range-track: #ECEEF1;           /* Whisper Grey */
+--color-range-thumb: #3E7CB1;           /* Azure Blue */
+--color-select-arrow: #5D6D7E;          /* Slate Grey */
+
+/* Table Components - New section */
+--color-table-header-bg: #F0F2F5;       /* Light header background */
+--color-table-header-text: #2C3E50;     /* Charcoal */
+--color-table-row-bg: #FFFFFF;          /* Pure White */
+--color-table-row-alt-bg: #F7F9FC;      /* Snow White */
+--color-table-row-hover: #ECEEF1;       /* Whisper Grey */
+--color-table-row-selected: #81B0D526;  /* Sky Blue 15% opacity */
+--color-table-border: #ECEEF1;          /* Whisper Grey */
+--color-table-footer-bg: #F7F9FC;       /* Snow White */
+
+/* Chart & Data Visualization - New section */
+--color-chart-primary: #274C77;         /* Deep Blue */
+--color-chart-secondary: #3E7CB1;       /* Azure Blue */
+--color-chart-tertiary: #81B0D5;        /* Sky Blue */
+--color-chart-quaternary: #6BC4A6;      /* Soft Teal */
+--color-chart-quinary: #F0B13A;         /* Soft Amber */
+--color-chart-senary: #E25563;          /* Soft Red */
+--color-chart-septenary: #8D9DAD;       /* Cool Grey */
+--color-chart-grid: #ECEEF1;            /* Whisper Grey */
+--color-chart-grid-dark: #BEC3C9;       /* Iron Grey */
+--color-chart-axis: #5D6D7E;            /* Slate Grey */
+--color-chart-label: #2C3E50;           /* Charcoal */
+--color-chart-tooltip-bg: #FFFFFF;      /* Pure White */
+--color-chart-tooltip-border: #BEC3C9;  /* Iron Grey */
+}
+  
+  /* Dark Theme */
+  [data-theme="dark"] {
+    /* Brand Colors - Slightly lighter for dark mode */
+    --color-brand-primary: #2A4D76;     /* Lighter Deep Blue */
+    --color-brand-secondary: #5999D6;   /* Lighter Azure Blue */
+    --color-brand-tertiary: #A3CEF1;    /* Original Baby Blue Eyes */
+  
+    /* Background Variants */
+    --color-bg-app: #121A24;            /* Dark Navy */
+    --color-bg-header: #1C2836;         /* Dark Charcoal */
+    --color-bg-sidebar: #0B0C10;        /* True Black */
+    --color-bg-content: #1C2836;        /* Dark Charcoal */
+    --color-bg-card: #263345;           /* Slate Navy */
+    --color-bg-modal-overlay: #0B0C10E6; /* True Black 90% opacity */
+    --color-bg-selected: #3E7CB133;     /* Azure Blue 20% opacity */
+    --color-bg-alt-row: #1E2530;        /* Darker Navy */
+  
+    /* Buttons / Highlights / Links */
+    --color-btn-primary: #3E7CB1;       /* Azure Blue (unchanged) */
+    --color-btn-primary-hover: #5999D6; /* Lighter Azure */
+    --color-btn-secondary: #5D6D7E;     /* Slate Grey (unchanged) */
+    --color-btn-secondary-hover: #8D9DAD; /* Cool Grey */
+    --color-btn-tertiary: #465565;      /* Darker Grey for dark theme */
+    --color-btn-tertiary-hover: #5D6D7E; /* Slate Grey */
+    --color-btn-disabled: #3A454F;      /* Darker disabled for dark mode */
+    --color-link: #6096BA;              /* Lighter blue for links */
+    --color-link-hover: #81B0D5;        /* Sky Blue */
+    --color-text-selection: #3E7CB166;  /* Azure Blue 40% opacity */
+    --color-focus-ring: #5999D6;        /* Lighter Azure */
+  
+    /* Message Bubbles */
+    --color-msg-user-bg: #3E7CB1;       /* Azure Blue (unchanged) */
+    --color-msg-user-text: #FFFFFF;     /* Pure White (unchanged) */
+    --color-msg-user-time: #E7ECEFBF;   /* Alice Blue 75% opacity */
+    --color-msg-receiver-bg: #263345;   /* Slate Navy */
+    --color-msg-receiver-text: #E7ECEF; /* Alice Blue */
+    --color-msg-receiver-time: #8D9DAD; /* Cool Grey (unchanged) */
+    --color-msg-system-bg: #1E253033;   /* Darker Navy 20% opacity */
+    --color-msg-system-text: #8D9DAD;   /* Cool Grey */
+    --color-msg-selected: #3E7CB140;    /* Azure Blue 25% opacity */
+  
+    /* Status Indicators & Notifications - Keep similar for consistency */
+    --color-status-success: #2DCE5B;    /* Brighter Green for dark mode */
+    --color-status-error: #FF4D5E;      /* Brighter Red for dark mode */
+    --color-status-warning: #FFCE3A;    /* Brighter Amber for dark mode */
+    --color-status-info: #6096BA;       /* Lighter blue for info */
+    --color-status-neutral: #8D9DAD;    /* Cool Grey (unchanged) */
+    --color-status-online: #2DCE5B;     /* Brighter Green for dark mode */
+    --color-status-away: #FFCE3A;       /* Brighter Amber for dark mode */
+    --color-status-busy: #FF4D5E;       /* Brighter Red for dark mode */
+    --color-status-offline: #5D6D7E;    /* Slate Grey - darker for offline */
+    --color-notification-badge: #FF4D5E; /* Brighter Red for dark mode */
+    --color-msg-new-indicator: #5999D6; /* Lighter Azure Blue */
+    --color-receipt-read: #5999D6;      /* Lighter Azure Blue */
+    --color-receipt-delivered: #5D6D7E; /* Slate Grey - more visible */
+    --color-typing-indicator: #5999D6;  /* Lighter Azure Blue */
+  
+    /* Borders & Dividers */
+    --color-border-primary: #3A4655;    /* Darker border for dark theme */
+    --color-border-secondary: #465565;  /* Darker secondary border */
+    --color-border-subtle: #2A3442;     /* Very dark subtle border */
+    --color-border-focus: #5999D6;      /* Lighter Azure Blue */
+    --color-border-error: #FF4D5E;      /* Brighter Red for dark mode */
+    --color-border-success: #2DCE5B;    /* Brighter Green for dark mode */
+    --color-divider-primary: #3A4655;   /* Darker divider */
+    --color-divider-subtle: #2A3442;    /* Very dark subtle divider */
+  
+    /* Shadows & Elevation - Darker and more pronounced */
+    --shadow-subtle: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-card: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    --shadow-dropdown: 0px 6px 12px rgba(0, 0, 0, 0.4);
+    --shadow-modal: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    --shadow-nav-top: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-nav-bottom: 0px -2px 4px rgba(0, 0, 0, 0.3);
+  
+    /* Placeholders & Muted Text */
+    --color-placeholder-primary: #5D6D7E; /* Slate Grey - more visible */
+    --color-placeholder-secondary: #465565; /* Darker secondary placeholder */
+    --color-text-disabled: #3A4655;     /* Darker disabled text */
+    --color-text-muted: #5D6D7E;        /* Slate Grey - more visible */
+    --color-text-watermark: #3A4655BF;  /* Dark watermark with 75% opacity */
+    --color-text-helper: #8D9DAD;       /* Cool Grey - more visible */
+  
+    /* Headings & Typography */
+    --color-heading-h1: #E7ECEF;       /* Alice Blue */
+    --color-heading-h2: #E7ECEF;       /* Alice Blue */
+    --color-heading-h3: #C4D3DF;       /* Lighter Alice Blue */
+    --color-heading-h4: #A3CEF1;       /* Baby Blue Eyes */
+    --color-text-body: #C4D3DF;        /* Lighter Alice Blue */
+    --color-text-secondary: #8D9DAD;   /* Cool Grey */
+    --color-text-caption: #6D7F8F;     /* Darker Cool Grey */
+    --color-text-blockquote: #8D9DAD;  /* Cool Grey */
+    --color-text-code: #A3CEF1;        /* Baby Blue Eyes */
+    --color-bg-code: #263345;          /* Slate Navy */
+    --color-text-inverse: #121A24;     /* Dark Navy */
+  }
+  
+  /* High Contrast Theme */
+  [data-theme="high-contrast"] {
+    /* Brand Colors - Maximum contrast */
+    --color-brand-primary: #0A2344;     /* Deeper Blue */
+    --color-brand-secondary: #0059B3;   /* Bright Blue */
+    --color-brand-tertiary: #4D96FF;    /* Vibrant Sky */
+  
+    /* Background Variants */
+    --color-bg-app: #FFFFFF;            /* Pure White */
+    --color-bg-header: #000000;         /* Pure Black */
+    --color-bg-sidebar: #000000;        /* Pure Black */
+    --color-bg-content: #FFFFFF;        /* Pure White */
+    --color-bg-card: #F2F2F2;           /* Very Light Grey */
+    --color-bg-modal-overlay: #000000CC; /* Pure Black 80% opacity */
+    --color-bg-selected: #0059B333;     /* Bright Blue 20% opacity */
+    --color-bg-alt-row: #EAEAEA;        /* Light Grey */
+  
+    /* Buttons / Highlights / Links */
+    --color-btn-primary: #0059B3;       /* Bright Blue */
+    --color-btn-primary-hover: #003C7A; /* Darker Bright Blue */
+    --color-btn-secondary: #333333;     /* Dark Grey */
+    --color-btn-secondary-hover: #000000; /* Pure Black */
+    --color-btn-tertiary: #666666;      /* Medium Grey */
+    --color-btn-tertiary-hover: #333333; /* Dark Grey */
+    --color-btn-disabled: #CCCCCC;      /* Light Grey */
+    --color-link: #0059B3;              /* Bright Blue */
+    --color-link-hover: #003C7A;        /* Darker Bright Blue */
+    --color-text-selection: #0059B366;  /* Bright Blue 40% opacity */
+    --color-focus-ring: #0059B3;        /* Bright Blue */
+  
+    /* Message Bubbles - Maximum contrast */
+    --color-msg-user-bg: #000000;       /* Pure Black */
+    --color-msg-user-text: #FFFFFF;     /* Pure White */
+    --color-msg-user-time: #FFFFFFBF;   /* Pure White 75% opacity */
+    --color-msg-receiver-bg: #EAEAEA;   /* Light Grey */
+    --color-msg-receiver-text: #000000; /* Pure Black */
+    --color-msg-receiver-time: #333333; /* Dark Grey */
+    --color-msg-system-bg: #EAEAEA;     /* Light Grey */
+    --color-msg-system-text: #000000;   /* Pure Black */
+    --color-msg-selected: #0059B333;    /* Bright Blue 20% opacity */
+  
+    /* Status Indicators & Notifications - Brightest versions */
+    --color-status-success: #008800;    /* Dark Green */
+    --color-status-error: #CC0000;      /* Dark Red */
+    --color-status-warning: #CC6600;    /* Dark Orange */
+    --color-status-info: #0059B3;       /* Bright Blue */
+    --color-status-neutral: #333333;    /* Dark Grey */
+    --color-status-online: #008800;     /* Dark Green */
+    --color-status-away: #CC6600;       /* Dark Orange */
+    --color-status-busy: #CC0000;       /* Dark Red */
+    --color-status-offline: #333333;    /* Dark Grey */
+    --color-notification-badge: #CC0000; /* Dark Red */
+    --color-msg-new-indicator: #0059B3; /* Bright Blue */
+    --color-receipt-read: #0059B3;      /* Bright Blue */
+    --color-receipt-delivered: #333333; /* Dark Grey */
+    --color-typing-indicator: #0059B3;  /* Bright Blue */
+  
+    /* Borders & Dividers - Strong contrasts */
+    --color-border-primary: #000000;    /* Pure Black */
+    --color-border-secondary: #333333;  /* Dark Grey */
+    --color-border-subtle: #777777;     /* Medium Grey */
+    --color-border-focus: #0059B3;      /* Bright Blue */
+    --color-border-error: #CC0000;      /* Dark Red */
+    --color-border-success: #008800;    /* Dark Green */
+    --color-divider-primary: #000000;   /* Pure Black */
+    --color-divider-subtle: #CCCCCC;    /* Light Grey */
+  
+    /* Shadows & Elevation - More defined */
+    --shadow-subtle: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    --shadow-card: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    --shadow-dropdown: 0px 6px 12px rgba(0, 0, 0, 0.25);
+    --shadow-modal: 0px 8px 16px rgba(0, 0, 0, 0.25);
+    --shadow-nav-top: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    --shadow-nav-bottom: 0px -2px 4px rgba(0, 0, 0, 0.25);
+  
+    /* Placeholders & Muted Text - Still readable */
+    --color-placeholder-primary: #666666; /* Medium Grey */
+    --color-placeholder-secondary: #777777; /* Medium Grey */
+    --color-text-disabled: #777777;     /* Medium Grey */
+    --color-text-muted: #444444;        /* Darker Grey - more visible */
+    --color-text-watermark: #CCCCCC;    /* Light Grey */
+    --color-text-helper: #333333;       /* Dark Grey */
+  
+    /* Headings & Typography - Maximum contrast */
+    --color-heading-h1: #000000;        /* Pure Black */
+    --color-heading-h2: #000000;        /* Pure Black */
+    --color-heading-h3: #000000;        /* Pure Black */
+    --color-heading-h4: #000000;        /* Pure Black */
+    --color-text-body: #000000;         /* Pure Black */
+    --color-text-secondary: #333333;    /* Dark Grey */
+    --color-text-caption: #444444;      /* Dark Medium Grey */
+    --color-text-blockquote: #333333;   /* Dark Grey */
+    --color-text-code: #000000;         /* Pure Black */
+    --color-bg-code: #EAEAEA;           /* Light Grey */
+    --color-text-inverse: #FFFFFF;      /* Pure White */
+  }

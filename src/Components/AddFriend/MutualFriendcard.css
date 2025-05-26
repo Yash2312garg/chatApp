@@ -1,0 +1,123 @@
+.mfc {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.mfc:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.mfc-avatar {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.mfc-avatar-img,
+.mfc-avatar-placeholder {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mfc-avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-card);
+}
+
+.mfc-info {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mfc-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text-body);
+  margin: 0;
+}
+
+.mfc-username {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.mfc-mutual-count {
+  font-size: 0.8rem;
+  color: var(--color-brand-secondary);
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+/* Action button area */
+.mfc-action {
+  padding: 0 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Size styles */
+.mfc-size-sm { width: 160px; font-size: 0.85rem; }
+.mfc-size-md { width: 200px; font-size: 1rem; }
+.mfc-size-lg { width: 240px; font-size: 1.1rem; }
+
+.mfc-size-sm .mfc-info { padding: 0.5rem 0.75rem; }
+.mfc-size-lg .mfc-info { padding: 1rem 1.25rem; }
+
+.mfc-size-sm .mfc-action { padding: 0 0.75rem 0.75rem; }
+.mfc-size-lg .mfc-action { padding: 0 1.25rem 1.25rem; }
+
+/* Themes */
+.mfc-theme-light {
+  background-color: var(--color-bg-content);
+  color: var(--color-text-body);
+  border: 1px solid var(--color-border-extra-subtle);
+}
+
+.mfc-theme-dark {
+  background-color: var(--color-bg-sidebar-active);
+  color: var(--color-text-inverse);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.mfc-theme-dark .mfc-name {
+  color: var(--color-text-inverse);
+}
+
+.mfc-theme-dark .mfc-username {
+  color: var(--color-text-muted);
+}
+
+.mfc-theme-dark .mfc-mutual-count {
+  color: var(--color-brand-tertiary);
+}
+
+.mfc-theme-dark .mfc-avatar-placeholder {
+  background-color: var(--color-bg-sidebar);
+  color: var(--color-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .mfc-size-sm { width: 140px; }
+  .mfc-size-md { width: 160px; }
+}

@@ -1,15 +1,23 @@
-import React, { useContext } from 'react'
-import Signup from './Authentication/Signup'
-import { UserContext } from './Context/UserContext'
-import Chat from "./Chat/Chat"
-function ChatsPage() {
-  const {userName,id} = useContext(UserContext)
-  if(userName){
-    return <Chat />
-  }
-  return (
-    <Signup/>
-  )
-}
+// ProtectedRoute.js
+import React, { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from './Context/UserContext';
 
-export default ChatsPage
+const ProtectedRoute = ({ children }) => {
+  const { userName, id } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userName || !id) {
+      navigate('/login'); // Redirect if not logged in
+    }
+  }, [userName, id, navigate]);
+
+  if (!userName || !id) {
+    return null; // Or a spinner/loading if you like
+  }
+
+  return children;
+};
+
+export default ProtectedRoute;

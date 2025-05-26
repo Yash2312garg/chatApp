@@ -1,15 +1,29 @@
 import React from 'react'
 import Logo from "../../assets/icons.svg"
+import "./Nav.css"
+import Button from '../../Authentication/components/Button'
+import { Navigate, useNavigate } from 'react-router-dom'
+
 function Nav() {
+    const navigate = useNavigate()
+    const onClick = (e) => {
+        const name = e.target.name
+        if (name == 'login') {
+            navigate("/login")
+        } else if (name == 'signup') {
+            navigate("/signup")
+
+        }
+    }
     return (
-        <div className='px-[20px] py-[6px] flex flex-row border-b shadow-xl items-center justify-between'>
-            <div className='  flex flex-row items-center justify-start gap-[10px]' >
-                <img src={Logo} alt="LOGO" width={"40px"} height={"40px"} />
-                <span className='font-[800] text-[#333] text-20px]'>Chat</span>
+        <div className="navbar">
+            <div className="navbar-left">
+                {/* <img src={Logo} alt="LOGO" width="40px" height="40px" /> */}
+                <span className="navbar-title">Digital Chat</span>
             </div>
-            <div>
-                <a href="/login" className="text-[#333] font-[600] px-4 py-2 text-20px]">Login</a>
-                <a href="/login" className="bg-[#16A64A] text-white px-4 py-2 rounded text-20px]">Sign Up</a>
+            <div className="navbar-right">
+                <Button onClick={onClick} type={'button'} className={"login-btn"} disabled={false} name='login'>Login</Button>
+                <Button onClick={onClick} type={'button'} className={"login-btn-inverse"} disabled={false} name='signup'>Signup</Button>
             </div>
         </div>
     )

@@ -1,0 +1,60 @@
+/* CSS for the login/signup component */
+.auth-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  .left-panel {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-bg-card); /* Whisper Grey */
+    width: 75%;
+    height: 100%;
+    text-align: center;
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .left-panel-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-heading-h1); /* Charcoal */
+  }
+  
+  .left-panel-text {
+    font-size: 1.125rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--color-text-secondary); /* Slate Grey */
+    max-width: 80%;
+    line-height: 1.6;
+  }
+  
+  
+  /* Responsive adjustments */
+  @media (min-width: 768px) {
+    .left-panel {
+      display: flex;
+      flex: 1.3;
+    }
+    
+    .auth-container {
+      flex-direction: row;
+    }
+    
+
+  }
+  
+  /* Mobile styling */
+  @media (max-width: 767px) {
+    .auth-container {
+      flex-direction: column;
+    }
+    
+  }

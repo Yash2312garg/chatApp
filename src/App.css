@@ -1,46 +1,70 @@
 .w100h100dfacjc {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .facjc {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .inp1 {
-    border-radius: 4px;
-    padding: 4px;
-    border: 1px solid #D6D6D6;
-    outline: none;
-    font-size: 1rem;
-    color: #666;
+  border-radius: 4px;
+  padding: 4px;
+  border: 1px solid #D6D6D6;
+  outline: none;
+  font-size: 1rem;
+  color: #666;
 }
+
 /* styles.css */
 .scrollbar {
-    overflow-y: auto; /* Enable vertical scrolling */
-  }
-  
-  /* Scrollbar styles for webkit browsers */
-  .scrollbar::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-  }
-  
-  .scrollbar::-webkit-scrollbar-track {
-    background: #2c2f33; /* Track color */
-    border-radius: 4px; /* Rounded corners for the track */
-  }
-  
-  .scrollbar::-webkit-scrollbar-thumb {
-    background: #4f545c; /* Thumb color */
-    border-radius: 4px; /* Rounded corners for the thumb */
-  }
-  
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #6b747e; /* Color when hovering */
-  }
-  
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+}
+
+/* Scrollbar styles for webkit browsers */
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  /* Width of the scrollbar */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #2c2f33;
+  /* Track color */
+  border-radius: 4px;
+  /* Rounded corners for the track */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #4f545c;
+  /* Thumb color */
+  border-radius: 4px;
+  /* Rounded corners for the thumb */
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6b747e;
+  /* Color when hovering */
+}
+
+
+h5 {
+  color: #D1D5DB;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  /* margin: 4px; */
+}
+
+h2{
+  color: #E5E7EB;
+  font-size: 1.875rem ;
+  font-weight: 700;
+  padding: 4px 8px;
+  /* margin: 4px; */
+}

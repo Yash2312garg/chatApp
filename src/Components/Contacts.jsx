@@ -1,15 +1,38 @@
-import React from 'react'
-
-function Contacts(props) {
-
+import React, { useState } from 'react'
+import Button from "../Components/Button/Button"
+import { FaRegEdit } from "react-icons/fa";
+import { FaFilter } from "react-icons/fa";
+import "./Contacts.css"
+import StartNewConversation from './Chats/StartNewConversation';
+function Contacts({ onLinePeople, setSelectedContact, offlinePeople, conversations }) {
+  // const 
+  const [popupbyId, setPupupbyId] = useState(null)
   return (
-    <div className='flex flex-col w-[20vw] bg-gray-900 h-[100vh] p-3 border-r border-gray-700 font-sans'>
-      <h2 className="text-green-400 text-lg font-medium mb-4">Online Users</h2>
-      <div className="flex-grow overflow-y-auto">
-        {props.onLinePeople.map((contact) => (
+
+
+    <div className='chat-sidebar'>
+      <div className='chat-sidebar-heading'>
+        <h1>Conversation</h1>
+        {!(conversations && conversations.length === 0) && <div className='chat-sidebar-heading-btn'>
+          <Button><FaRegEdit /></Button>
+          <Button><FaFilter /></Button>
+
+        </div>}
+      </div>
+
+      {conversations && conversations.length === 0 &&
+        <div className='chat-sidebar-no-conversation'>
+          <span>you have not started any conversation</span>
+          <Button>Start New Conversation</Button>
+        </div>}
+
+
+      {/* <div className="flex-grow overflow-y-auto">
+        {conversations && conversations.length===0 && <span>you have not started any conversation</span>}
+        {onLinePeople.map((contact) => (
           <div
             key={contact.userId}
-            onClick={() => { props.setSelectedContact(contact) }}
+            onClick={() => { setSelectedContact(contact) }}
             className="flex items-center p-2 mb-1 rounded-lg cursor-pointer transition duration-150 hover:bg-gray-800"
           >
             <img
@@ -20,8 +43,8 @@ function Contacts(props) {
             <span className="text-gray-300 text-sm font-normal">{contact.username}</span>
           </div>
         ))}
-      </div>
-      <h2 className="text-green-400 text-lg font-medium mb-4">OffLine Users</h2>
+      </div> */}
+      {/* <h2 className="text-green-400 text-lg font-medium mb-4">OffLine Users</h2>
 
 
       <div className="flex-grow overflow-y-auto">
@@ -40,7 +63,7 @@ function Contacts(props) {
             <span className="text-gray-300 text-sm font-normal">{contact.username}</span>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
 
   )

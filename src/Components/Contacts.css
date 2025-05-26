@@ -1,0 +1,36 @@
+.chat-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    background-color: var(--color-bg-app-alt);
+    /* Tailwind's gray-900 */
+    height: 100vh;
+    padding: 0.75rem;
+    /* Tailwind's p-3 = 12px = 0.75rem */
+    border-right: 1px solid var(--color-border-primary);
+    /* Tailwind's gray-700 */
+    font-family: sans-serif;
+    box-shadow: var(--shadow-2xl)
+}
+
+.chat-sidebar-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.chat-sidebar-heading-btn{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.chat-sidebar h1 {
+    /* color: ; */
+    color: var(--color-heading-h1);
+    font-size: 1.2rem;
+}
+.chat-sidebar-no-conversation{
+    align-self: center;
+    /* margin: 0 auto; */
+    
+}

@@ -28,3 +28,16 @@
     animation: slide-in 0.5s forwards;
   }
   
+  .homepage-container{
+    background-color: var(--color-bg-app);
+  }
+
+  .homepage-container main{
+    background-color: var(--color-bg-card);
+    height: 100vh;
+    /* width: 100vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }

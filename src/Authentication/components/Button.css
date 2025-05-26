@@ -1,0 +1,42 @@
+.login-btn {
+    color: var(--color-text-inverse);
+    font-size: 1.025rem;
+    font-weight: 500;
+    background-color: var(--color-btn-primary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin: 4px;
+    border: 2px solid var(--color-btn-primary);
+
+}
+
+.login-btn:hover {
+    background-color: var(--color-btn-primary-hover);
+    border: 2px solid var(--color-btn-primary-hover);
+
+}
+
+.login-btn:disabled {
+    background-color: var(--color-btn-disabled);
+
+}
+
+.login-btn-inverse {
+    color: var(--color-text-inverse);
+    font-size: 1.025rem;
+    font-weight: 500;
+    border: 2px solid var(--color-border-subtle);
+    /* background-color: var(--color-); */
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin: 4px;
+}
+
+.login-btn-inverse:hover {
+    /* background-color: var(--color-btn-tertiary-hover); */
+}
+
+.login-btn-inverse:disabled {
+    background-color: var(--color-btn-disabled);
+
+}

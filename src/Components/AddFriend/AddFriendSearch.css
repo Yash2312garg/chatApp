@@ -1,0 +1,36 @@
+.addfriendsearch-section {
+    background-color: var(--color-bg-alt-row);
+    /* border-left: 2px solid #374151; */
+    border-right: 1px solid var(--color-divider-primary);
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 25vw;
+    height: 100vh;
+    gap: 20px;
+}
+
+.addfriendsearch-section h3 {
+    color: var(--color-heading-h3);
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 4px 8px;
+    /* margin: 4px; */
+}
+
+.addfriendsearch-section h5 {
+    color: var(--color-heading-h5);
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 4px 8px;
+}
+
+.addFriend-recent-search-list-component {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}

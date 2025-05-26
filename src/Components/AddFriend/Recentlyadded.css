@@ -1,0 +1,32 @@
+/* Container Styling */
+.recently-added-container {
+    background-color: var(--color-bg-app);
+    padding: 16px;
+    /* border: 1px solid #374151; */
+    border: 1px solid var(--color-border-extra-subtle);
+    box-shadow: var(--shadow-xl);
+    transition: background-color 0.3s, border-color 0.3s;
+    height: 100%;
+    flex: 1;
+    width: 100%;
+}
+
+/* Heading Styling */
+.recently-added-container h5 {
+    color: var(--color-heading-h5);
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 4px 8px;
+}
+
+/* User Card List Styling */
+.recent-searches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Hover Effect for Container
+.recently-added-container:hover {
+    border-color: #16A64A;
+} */

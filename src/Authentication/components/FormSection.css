@@ -1,0 +1,51 @@
+.signup-right-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+    height: 100%;
+}
+
+.login-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    align-self: center;
+    width: 100%;
+}
+
+.login-btn-container span {
+    color: var(--color-text-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.login-btn-container a {
+    color: var(--color-link);
+}
+.signup-right-container .spinner {
+    border: 2px solid #ccc;
+    border-top: 2px solid #333;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 0.6s linear infinite;
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .auth-error {
+    color:var(--color-status-error);
+    font-size: 0.9rem;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

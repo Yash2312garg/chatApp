@@ -1,0 +1,216 @@
+/* UserCards.css - Namespaced styles for user cards */
+
+.ucards {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    gap: 12px;
+    width: 100%;
+
+}
+
+/* Size variations */
+.ucards-size-sm {
+    padding: 8px;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.ucards-size-md {
+    padding: 12px;
+    gap: 12px;
+    font-size: 1rem;
+}
+
+.ucards-size-lg {
+    padding: 16px;
+    gap: 16px;
+    font-size: 1.1rem;
+}
+
+/* Theme variations - Dark Theme (Default) */
+.ucards-theme-dark {
+    background-color: var(--color-bg-card);
+
+    /* Card background */
+    color: #D1D5DB;
+    /* Text color */
+    border: 1px solid #374151;
+    /* Primary border */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    /* Light shadow */
+}
+
+/* Theme variations - Light Theme */
+.ucards-theme-light {
+    background-color: var(--color-bg-card);
+    color: #1F2937;
+    border: 1px solid #E5E7EB;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+
+/* Theme variations - Accent Theme */
+.ucards-theme-accent {
+    background-color: #111827;
+    /* Sidebar background */
+    color: #D1D5DB;
+    /* Text color */
+    border: 1px solid #16A64A;
+    /* Primary accent color */
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px;
+    /* Medium shadow */
+}
+
+/* Avatar section */
+.ucards-avatar {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ucards-avatar-img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ucards-avatar-placeholder {
+    color: #9CA3AF;
+    /* Placeholder text color */
+}
+
+/* Info section */
+.ucards-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.ucards-name {
+    font-weight: 500;
+    color: var(--color-heading-h5);
+    /* Primary headings */
+    font-size: 0.8em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ucards-username {
+    font-size: 0.7em;
+    color: var(--color-heading-h6);
+
+    /* Subtext color */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Theme-specific text colors */
+.ucards-theme-light .ucards-name {
+    color: #1F2937;
+}
+
+.ucards-theme-light .ucards-username {
+    color: #6B7280;
+}
+
+/* Action section */
+.ucards-action {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    position: relative;
+
+}
+
+/* Button icon styling */
+.ucards-button-icon {
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.ucard-sm-btn {
+    font-size: 12px !important;
+    padding: 0.35rem !important;
+    height: 100% !important;
+}
+
+.ucards-button-text {
+    vertical-align: middle;
+}
+.ucards-button-secondary-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    z-index: 99999;
+    background-color: var(--color-bg-card);
+    /* padding: 0.25rem; */
+    top: 110%;
+    right: 10%;
+    box-shadow:var(--shadow-xl);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 4px ;
+    font-size: 0.8rem;
+
+
+}
+.ucards-button-secondary-container span{
+    padding: 0.25rem 1.25rem; 
+    width: 100%;
+    /* padding-left: 1.25rem; */
+    cursor: pointer;
+    color: var(--color-text-secondary);
+}
+
+.ucards-button-secondary-container span:hover{
+    background-color: var(--color-bg-content-alt);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+
+    .ucards-size-sm .ucards-button-text,
+    .ucards-size-md .ucards-button-text {
+        display: none;
+    }
+
+    .ucards-size-sm .ucards-button-icon,
+    .ucards-size-md .ucards-button-icon {
+        margin-right: 0;
+    }
+}
+
+/* Hover effect */
+.ucards:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px;
+    transition: box-shadow 0.2s ease;
+}
+
+.ucards-theme-dark:hover {
+    border-color: #4B5563;
+    /* Secondary border */
+}
+
+.ucards-theme-light:hover {
+    border-color: #D1D5DB;
+}
+
+.ucards-theme-accent:hover {
+    border-color: #10B981;
+    /* Primary button */
+}
+
+.addfriends-ucards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

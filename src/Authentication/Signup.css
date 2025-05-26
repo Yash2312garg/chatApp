@@ -1,39 +1,100 @@
 /* Background Animations */
 @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
   }
-  
-  @keyframes float-slow {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+
+  50% {
+    transform: translateY(-20px);
   }
-  
-  .floating-circle {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.5;
-    animation: float 6s ease-in-out infinite;
+
+  100% {
+    transform: translateY(0);
   }
-  
-  .floating-circle-slow {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.5;
-    animation: float-slow 10s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translateY(0);
   }
-  
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-circle-slow {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.signup-container {
+  background-color: var(--color-bg-app);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.inner-signup-container {
+
+  width: 90vw;
+  height: 90vh;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  /* padding: 1rem; */
+  border: 2px solid var(--color-border-primary);
+
+}
+
+.signup-right-container {
+  border-color: var(--color-bg-content);
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 8px 36px;
+
+}
+
+.signup-right-container-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  align-self: center;
+  color: var(--color-heading-h1);
+
+}
+
+@media (min-width: 768px) {
+  .inner-signup-container {
+    width: 70vw;
+    height: 84vh;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner-signup-container {
+    width: 72vw;
+
+  }
+
+}
